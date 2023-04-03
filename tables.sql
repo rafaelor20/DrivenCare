@@ -41,3 +41,13 @@ CREATE TABLE doctor_sessions (
   token VARCHAR(100) NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
+
+-- create the patient_sessions table
+
+CREATE TABLE patient_sessions (
+  id SERIAL PRIMARY KEY,
+  patient_id INTEGER NOT NULL REFERENCES patients(id),
+  token UUID NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
