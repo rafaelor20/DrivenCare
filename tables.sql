@@ -34,3 +34,10 @@ CREATE TABLE appointments (
   end_time TIME NOT NULL CHECK (date_trunc('minute', end_time) = end_time AND extract(minute from (end_time - start_time)) = 20),
   confirmed BOOLEAN DEFAULT false
 );
+
+CREATE TABLE doctor_sessions (
+  id SERIAL PRIMARY KEY,
+  doctor_id INTEGER REFERENCES doctors(id),
+  token VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
