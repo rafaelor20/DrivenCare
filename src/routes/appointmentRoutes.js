@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { getAvailableTimesByDoctorId } from "../controllers/getAvailableTimes.controller";
+import { getAvailableTimesByDoctorId } from "../controllers/getAvailableTimes.controller.js";
 
 
 const appointmentRoutes = Router();
