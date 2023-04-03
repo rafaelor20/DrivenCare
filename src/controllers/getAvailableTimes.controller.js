@@ -2,7 +2,7 @@ import { db } from "../database/db.js";
 
 export async function getAvailableTimesByDoctorId(req, res) {
   const { doctorId } = req.params;
-  const token = req.headers.authorization;
+  const token = req.headers.authorization.split(" ")[1];
 
   try {
     // Check if the patient is authenticated
