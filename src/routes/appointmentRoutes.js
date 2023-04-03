@@ -1,10 +1,10 @@
 import { Router } from "express";
-import {validateSchema} from "../middlewares/schemaValidationMiddleware.js";
+
+import { getAvailableTimesByDoctorId } from "../controllers/getAvailableTimes.controller";
 
 
 const appointmentRoutes = Router();
 
-appointmentRoutes.post("/signup-appointment", )
-appointmentRoutes.post("/signin-appointment", )
+appointmentRoutes.get("/getAvailableTimes", getAvailableTimesByDoctorId)
 
 export default appointmentRoutes;
